@@ -1,0 +1,356 @@
+Delivered-To: devvrat.joshi@iitgn.ac.in
+Received: by 2002:a02:5148:0:0:0:0:0 with SMTP id s69csp746622jaa;
+        Fri, 11 Jan 2019 08:01:00 -0800 (PST)
+X-Received: by 2002:a05:651c:c8:: with SMTP id 8mr8681528ljr.53.1547222460350;
+        Fri, 11 Jan 2019 08:01:00 -0800 (PST)
+ARC-Seal: i=3; a=rsa-sha256; t=1547222460; cv=pass;
+        d=google.com; s=arc-20160816;
+        b=XTwySlU7EX9zsqTqLUKChHoFTKepW9bwnhymllO6yfQRlf1w3FVgK6o67nlH29ZE4t
+         52/lDoQ6yNw+jnx7PvuC3TpKc8e0Fi6woRF2pN+HGFNsHW2k+PtQe2+4xV3sLE3AVXS2
+         rlPQkB5I/c415KvCuNEu9x/2JrjebozFyvZ91mG3nLkIt34gRzRBkSbbEdAkJgpL1eFR
+         CjO/U+KYt+U5jJ+p9UZR6BDVU3GqCpuVVxZ0Pb9qJhfGYAPIq+vldO96RXVOD6kI0s37
+         2Vy4WlmKWIcYiNgtLd/4F6maA5hYs5YqQ0d6rTsYBy8X2nTdzPr0i2lT6CMhl9ffDv2V
+         sLWQ==
+ARC-Message-Signature: i=3; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=list-subscribe:list-unsubscribe:list-archive:list-help:list-post
+         :list-id:mailing-list:precedence:cc:to:subject:message-id:date:from
+         :mime-version:dkim-signature;
+        bh=TEPwN75t9imYxiH12eFcSvKj6HhKl4dkhz5EVzN1dfw=;
+        b=QfmnGbV8JA6HFvF3RtEHA/3EvY318WkHXupiCgGMZWES8jrKaPVkwHKcou1qgrfrTf
+         BZfYDoC3ec5BGY/zkVFexbcC0oc4XVq26d9mzRmWEwJw3L7z/B88CLWH2wzlIAqtArkL
+         5CXGKjfJ07CEU76XwTxucHOyotG7QDxTpBeg8HqZKHBK47jlgdySOfjaFZzEkm+xR9cW
+         qDmFAWHclqGwQ+p4TJ++7kiTgMyEN8tGrLr74x4wIi1YSRbNURafxCWyst/r/qoUK4NR
+         6rFcfUgd5s62ZY+uR9F6/HAhX8l1p6N0s0rZf+XvPQRVQVgRfJXHOtEWHE/4kqTkjOTB
+         zBYg==
+ARC-Authentication-Results: i=3; mx.google.com;
+       dkim=pass header.i=@iitgn-ac-in.20150623.gappssmtp.com header.s=20150623 header.b="Nji/6KZG";
+       arc=pass (i=2 spf=pass spfdomain=iitgn.ac.in dkim=pass dkdomain=iitgn-ac-in.20150623.gappssmtp.com);
+       spf=pass (google.com: domain of btech18.mech+bncbcc65p6kyilrbox34lqqkgqemtzqf4y@iitgn.ac.in designates 209.85.220.69 as permitted sender) smtp.mailfrom=btech18.mech+bncBCC65P6KYILRBOX34LQQKGQEMTZQF4Y@iitgn.ac.in
+Return-Path: <btech18.mech+bncBCC65P6KYILRBOX34LQQKGQEMTZQF4Y@iitgn.ac.in>
+Received: from mail-sor-f69.google.com (mail-sor-f69.google.com. [209.85.220.69])
+        by mx.google.com with SMTPS id e11-v6sor45601657ljg.24.2019.01.11.08.01.00
+        for <devvrat.joshi@iitgn.ac.in>
+        (Google Transport Security);
+        Fri, 11 Jan 2019 08:01:00 -0800 (PST)
+Received-SPF: pass (google.com: domain of btech18.mech+bncbcc65p6kyilrbox34lqqkgqemtzqf4y@iitgn.ac.in designates 209.85.220.69 as permitted sender) client-ip=209.85.220.69;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@iitgn-ac-in.20150623.gappssmtp.com header.s=20150623 header.b="Nji/6KZG";
+       arc=pass (i=2 spf=pass spfdomain=iitgn.ac.in dkim=pass dkdomain=iitgn-ac-in.20150623.gappssmtp.com);
+       spf=pass (google.com: domain of btech18.mech+bncbcc65p6kyilrbox34lqqkgqemtzqf4y@iitgn.ac.in designates 209.85.220.69 as permitted sender) smtp.mailfrom=btech18.mech+bncBCC65P6KYILRBOX34LQQKGQEMTZQF4Y@iitgn.ac.in
+ARC-Seal: i=2; a=rsa-sha256; t=1547222460; cv=pass;
+        d=google.com; s=arc-20160816;
+        b=m2ubJHbk8/S8QLHYJImnDnFdwkNyJ4CQFBbm/0H2gBYTfveEifQHN/JhCgpDEEiMhN
+         eihOCm4IjPMAh2etiEzoQfZQq4Q/qQQYvV4TxaXTjiiG+GMxxDlAfkyNK2uDHZSeFGK3
+         lvnDEAFD/zgXIEYwQqP4yRrorZwF2ubalXf7AcKeSfcSbXWIJVzhIxzkA7MOJrOmWmDe
+         8xyiuq+4dHvb04lX7xvZ/CYeFvia1zSHYukBC1u5f9fm7iOyMKUBGfzIKhys7nIemOzR
+         rV6trEGusq0xStyiVHyFLbZdQ622V0YqIUybyYHMMpN9IKW5rPKwk09jzkuHW83KWljX
+         r8qQ==
+ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=list-subscribe:list-unsubscribe:list-archive:list-help:list-post
+         :list-id:mailing-list:precedence:cc:to:subject:message-id:date:from
+         :mime-version:dkim-signature;
+        bh=TEPwN75t9imYxiH12eFcSvKj6HhKl4dkhz5EVzN1dfw=;
+        b=Ia5J2N67bVpKj1mxNDO2z8CSbcPRl5ADnrKcaA8ZTO9CcwduLgAU1otXznw9TTc2GU
+         DONMmw6Ns44JpluSrkWXfdtKk+oZT3pg6WU5oia2XfEJftqDhFQo7gicdDVlGxXuXg0K
+         dKFoHpOlL3+dMCFLBLYwZRIgTMOohAOLbsMz6q+NIqWarUiRTK7hQA0M2DHCcLWWVmOs
+         U7+DcJZg+pa3PgeAnjf8KSqUXG6SI87uQSKzrJDLo5CykNH4t8zI8+DU1PC3sjvXi8hb
+         WzRUSXgztRCyT7pAcvo0sZlIA4jaZNQYxvmx73HmvNLwMN3cTgY5OMAT7FU5sxCWob9J
+         2kcg==
+ARC-Authentication-Results: i=2; mx.google.com;
+       dkim=pass header.i=@iitgn-ac-in.20150623.gappssmtp.com header.s=20150623 header.b=tj3zkT9K;
+       spf=pass (google.com: domain of iiec@iitgn.ac.in designates 209.85.220.65 as permitted sender) smtp.mailfrom=iiec@iitgn.ac.in
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=iitgn-ac-in.20150623.gappssmtp.com; s=20150623;
+        h=mime-version:from:date:message-id:subject:to:cc:x-original-sender
+         :x-original-authentication-results:precedence:mailing-list:list-id
+         :list-post:list-help:list-archive:list-unsubscribe:list-subscribe;
+        bh=TEPwN75t9imYxiH12eFcSvKj6HhKl4dkhz5EVzN1dfw=;
+        b=Nji/6KZG/ActjU4sSMmDDdQ1rwhsfMSLxRQbuha074n8MqI1iHEg2k0iwI8cUusbri
+         CFo0jAY9+jqef9NDIQyvSGDVywfjdYd0N+hNLs5k0oyV1v+CJCGJ671ALUn500NX9GhU
+         91tHQ37gDTxVX7S5u0WXNQDqXIyV9SgVh2Z2+VFtqJzhEau3umOJwmgdbywGflCbIg74
+         V1y7D7Nw/4xI2jHeh3T4cOhuZC3V7IXf6kMGE+Xan2jI4cRYcesWGgLS8REymPDVtGK5
+         5wmmgM5wryujqU00hg5uEwY3YP/Bko3Matc9zpdpsZnFhdcPux7/g3S7CZkrp40j8MMr
+         DMPA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20161025;
+        h=x-gm-message-state:mime-version:from:date:message-id:subject:to:cc
+         :x-original-sender:x-original-authentication-results:precedence
+         :mailing-list:list-id:x-spam-checked-in-group:list-post:list-help
+         :list-archive:list-unsubscribe:list-subscribe;
+        bh=TEPwN75t9imYxiH12eFcSvKj6HhKl4dkhz5EVzN1dfw=;
+        b=j4Xe+tqCQ+SRbHpvY2r/VK2QJJuhL98ZY34tJN2CR1Mt3sfBl1XhNPwU2t0iC8THgJ
+         sW7BkjOLxem0POgkCcZytOSuItCqTe8wAM85khY/kM1eMDgOlH8cVGkc2ZCvSBVw61v2
+         2e3f2nWgDGuq7B4ToOylq+wovcEHnUU2XNGIhjGf/AXj09DqLimq0jCk7oc69Q7YszNS
+         II7tm0KzK3MzKay46kRr5kCWvK4XKnyYYid1CplaiELEpbsI1qNdaxViPI3uldDU8fca
+         8x+/vtS5KjKppf4ahqB7oXTwzl7H1ck8xUkKlP44iNwJhnHYnTUf3qTIuLY5oNMpFVwL
+         RLkw==
+X-Gm-Message-State: AJcUukdQe7Qt+f6tLe0guV++Sc5Oz/WR9/8Tx1/firVf+7/dOHIXwOiL
+        JgxDQLrgxHQ2ADKjbL5zq4B47Vgo
+X-Google-Smtp-Source: ALg8bN6etnaIkyZYVsk1w4yhW7rQ3VHCFteY3cSrLJIK5el54xuVfcYhMoo3xjHtV4mWltviBNOAeA==
+X-Received: by 2002:a2e:4253:: with SMTP id p80-v6mr80387lja.13.1547222458592;
+        Fri, 11 Jan 2019 08:00:58 -0800 (PST)
+X-BeenThere: btech18.mech@iitgn.ac.in
+Received: by 2002:a2e:5d9d:: with SMTP id v29-v6ls2027876lje.12.gmail; Fri, 11
+ Jan 2019 08:00:57 -0800 (PST)
+X-Received: by 2002:a2e:90c8:: with SMTP id o8-v6mr78476ljg.24.1547222457663;
+        Fri, 11 Jan 2019 08:00:57 -0800 (PST)
+X-BeenThere: btech18@iitgn.ac.in
+Received: by 2002:a2e:90ce:: with SMTP id o14-v6ls2031608ljg.11.gmail; Fri, 11
+ Jan 2019 08:00:57 -0800 (PST)
+X-Received: by 2002:a2e:9b99:: with SMTP id z25-v6mr74158lji.7.1547222456739;
+        Fri, 11 Jan 2019 08:00:56 -0800 (PST)
+X-BeenThere: btech@iitgn.ac.in
+Received: by 2002:a2e:5d9d:: with SMTP id v29-v6ls2027856lje.12.gmail; Fri, 11
+ Jan 2019 08:00:55 -0800 (PST)
+X-Received: by 2002:a2e:541c:: with SMTP id i28-v6mr80453ljb.20.1547222455747;
+        Fri, 11 Jan 2019 08:00:55 -0800 (PST)
+X-BeenThere: students@iitgn.ac.in
+Received: by 2002:a19:4bca:: with SMTP id y193ls1468702lfa.3.gmail; Fri, 11
+ Jan 2019 08:00:55 -0800 (PST)
+X-Received: by 2002:a19:24c6:: with SMTP id k189mr8257726lfk.77.1547222455047;
+        Fri, 11 Jan 2019 08:00:55 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1547222455; cv=none;
+        d=google.com; s=arc-20160816;
+        b=IhMetKsJbnRgQV31OYdAFIPtB6LrSxz5jHO8IxGMadGZHT6Am97onega/7ATLdRO2C
+         Cb1LaqjMUOWITiLMOw726H0s57hMitcSJ42o5nqN55vs0xjn+0qzqJosSduw6w7u0CqW
+         YF7ER0Pp93rxDddIXk6m4uvNAe5HjbOPE3t3lGuU0vWhykSQnC01TkMCpuXtT1MI1k+P
+         exBaVdgDzTcguNJeIs1xYwMrR+nSzvyVVjMAe1GJ0raTsrC3ieroYGdfqFE4WFzZXjmn
+         RArG8KvEbCKCBmtjYztIrQeix8keOcmbz6sdsOQvAbZfI4xZRKqkDMo3wLkyhw/5CI4K
+         J50g==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=cc:to:subject:message-id:date:from:mime-version:dkim-signature;
+        bh=TEPwN75t9imYxiH12eFcSvKj6HhKl4dkhz5EVzN1dfw=;
+        b=Y7Q0WP13d4WmcpeBuTxU2Ensi3TsIqvv0d6dmke4wdiScx+LZzNrmqi8xq71MnFNWw
+         Tfkqzo7ukEIF0vRRHPZYmvnN1yD4YdXzrVFzE3LpnLPTjNALY0qK6TWkVcwzHz6YeD+L
+         olMvQLkj+K1ZG0j5zpq3vK987H0455q5SiwpxyF/LiHIWgGDh6R2r4ERmpHNOWFrOv6l
+         /BcKPXc0lZ6QpjVv0wDOQZaze83kMNY4xB6ldWThMjkqUOfsVJCuTME9byl2Bb7NZqI3
+         eROYvdIQv47aVghYoFoRSYt+XI0BTbHJbJhpOXKytMLHuNi7MK747eFmoNM7IUmZELYB
+         osmw==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@iitgn-ac-in.20150623.gappssmtp.com header.s=20150623 header.b=tj3zkT9K;
+       spf=pass (google.com: domain of iiec@iitgn.ac.in designates 209.85.220.65 as permitted sender) smtp.mailfrom=iiec@iitgn.ac.in
+Received: from mail-sor-f65.google.com (mail-sor-f65.google.com. [209.85.220.65])
+        by mx.google.com with SMTPS id a13-v6sor46481518ljj.25.2019.01.11.08.00.54
+        for <students@iitgn.ac.in>
+        (Google Transport Security);
+        Fri, 11 Jan 2019 08:00:55 -0800 (PST)
+Received-SPF: pass (google.com: domain of iiec@iitgn.ac.in designates 209.85.220.65 as permitted sender) client-ip=209.85.220.65;
+X-Received: by 2002:a2e:5d12:: with SMTP id r18-v6mr9959462ljb.89.1547222453791;
+ Fri, 11 Jan 2019 08:00:53 -0800 (PST)
+MIME-Version: 1.0
+From: "IITGN, INNOVATION AND ENTREPRENEURSHIP CENTER" <iiec@iitgn.ac.in>
+Date: Fri, 11 Jan 2019 21:30:44 +0530
+Message-ID: <CAGuE7rE2pPbZmXuxhJshtmceMs91b=jcLP6rbv8u9RHb48E-+Q@mail.gmail.com>
+Subject: Blockchain Technology Mythbuster session by Mr. Kamalesh Dwivedi
+To: Students <students@iitgn.ac.in>, Faculty <faculty@iitgn.ac.in>, Staff <staff@iitgn.ac.in>, 
+        Project Staff <project.staff@iitgn.ac.in>, Kritika Sharma <t-ksharma@mail.nasscom.in>, 
+        Ritwik Chinmaya Pandia <t-ritwik@mail.nasscom.in>
+Cc: Deepak Agnihotri <d.agnihotri@iitgn.ac.in>, Nirmal Jha <nirmal.jha@iitgn.ac.in>
+Content-Type: multipart/alternative; boundary="000000000000bf74f2057f30cc76"
+X-Original-Sender: iiec@iitgn.ac.in
+X-Original-Authentication-Results: mx.google.com;       dkim=pass
+ header.i=@iitgn-ac-in.20150623.gappssmtp.com header.s=20150623
+ header.b=tj3zkT9K;       spf=pass (google.com: domain of iiec@iitgn.ac.in
+ designates 209.85.220.65 as permitted sender) smtp.mailfrom=iiec@iitgn.ac.in
+Precedence: list
+Mailing-list: list btech18.mech@iitgn.ac.in; contact btech18.mech+owners@iitgn.ac.in
+List-ID: <btech18.mech.iitgn.ac.in>
+X-Spam-Checked-In-Group: students@iitgn.ac.in
+X-Google-Group-Id: 511455156483
+List-Post: <https://groups.google.com/a/iitgn.ac.in/group/btech18.mech/post>, <mailto:btech18.mech@iitgn.ac.in>
+List-Help: <https://support.google.com/a/iitgn.ac.in/bin/topic.py?topic=25838>,
+ <mailto:btech18.mech+help@iitgn.ac.in>
+List-Archive: <https://groups.google.com/a/iitgn.ac.in/group/btech18.mech/>
+List-Unsubscribe: <mailto:googlegroups-manage+511455156483+unsubscribe@googlegroups.com>,
+ <https://groups.google.com/a/iitgn.ac.in/group/btech18.mech/subscribe>
+List-Subscribe: <https://groups.google.com/a/iitgn.ac.in/group/btech18.mech/subscribe>,
+ <mailto:btech18.mech+subscribe@iitgn.ac.in>
+
+--000000000000bf74f2057f30cc76
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+Hi all,
+
+The Blockchain Technology stands to revolutionize many industries. However,
+a number of myths around what the technology actually is and how it works
+are preventing businesses from understanding its potential impacts and
+applications.
+As part of ongoing Entrepreneurship Development Program, we have planned a
+myth buster session  by Mr. Kamalesh Dwivedi,that will expose the audience
+about popular misconceptions around the blockchain technology, its possible
+applications in different industries, current state of the art , trends and
+opportunities for R&D and startups. The Session is planned as per following
+details:
+
+*Date: Saturday, 12th January 2019*
+
+*Time: 3:15 PMVenue: AB-6/202*
+
+*Speaker Bio:*
+Kamalesh Dwivedi is a Business Partner at 3Lines Venture Capital, an active
+Angel investor, a mentor and business advisor to early stage startup
+companies in USA. He has been an Information Technology Executive with over
+twenty years of successful track record as a CIO of several global
+corporations in their transformative phases in the US and Japan and has led
+workforce in more than fifteen countries.
+
+As a CIO, he has led IT organizations during periods of profound changes in
+the companies=E2=80=99 business models and their industries. Whether it was=
+ the
+epochal move to broadband in the cable and telco industries in 1990=E2=80=
+=99s or
+the rapid globalization and a technology driven productivity improvement in
+the US BPO industry during the 2000=E2=80=99s, Kamalesh has successfully le=
+d IT
+organizations through transformational vectors and change vortices. He has
+also served as the CIO of Japan=E2=80=99s largest company in the BPO indust=
+ry and
+has worked for the portfolio companies of the global Private Equity firms,
+Bain Capital and General Atlantic. As a Technology Consultant, he has
+consulted with a portfolio company of the Private Equity company Permira,
+in the Quick Service Restaurant industry in Japan. Most recently, Kamalesh
+consulted with Coca-Cola Bottlers Japan Inc. Earlier in his career, he has
+led engineering and manufacturing organizations in the VLSI and Cell phone
+industries in Canada. Kamalesh has served on the Boards of TeleTech India,
+ADC Telecommunications India and Bell China in Dalian, China.
+
+Kamalesh holds a Bachelor of Technology degree from IIT Kanpur, a Master of
+Engineering from Carleton University, Ottawa, Canada and has completed the
+Program for Management Development (PMD) from Harvard Business School.
+Looking forward to see you all,
+
+Best Regards,
+Anand
+
+--000000000000bf74f2057f30cc76
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"ltr"><div class=3D"gmail_default" dir=3D"ltr"><font color=3D"#0=
+00000" face=3D"verdana,sans-serif">Hi all,=C2=A0</font></div><div class=3D"=
+gmail_default" dir=3D"ltr"><font color=3D"#000000"><font face=3D"verdana,sa=
+ns-serif"></font><br></font></div><div class=3D"gmail_default" dir=3D"ltr">=
+<span style=3D"text-transform:none;text-indent:0px;letter-spacing:normal;fo=
+nt-style:normal;font-weight:400;word-spacing:0px;display:inline;white-space=
+:normal;float:none;background-color:rgb(255,255,255)"><font color=3D"#00000=
+0"><font face=3D"verdana,sans-serif">The Blockchain Technology stands to re=
+volutionize many industries. <span style=3D"text-transform:none;text-indent=
+:0px;letter-spacing:normal;font-style:normal;font-weight:400;word-spacing:0=
+px;display:inline;white-space:normal;float:none;background-color:rgb(255,25=
+5,255)">However, a number of myths around what the technology actually is a=
+nd how it works are preventing businesses from understanding its potential =
+impacts and applications.</span></font></font></span></div><div class=3D"gm=
+ail_default" dir=3D"ltr"><font face=3D"verdana,sans-serif">As part of ongoi=
+ng Entrepreneurship Development Program, we have planned a myth buster sess=
+ion=C2=A0 by Mr. Kamalesh Dwivedi,that will expose the audience about popul=
+ar misconceptions around the blockchain technology, its possible applicatio=
+ns in different industries, current state of the art , trends and opportuni=
+ties for R&amp;D and startups. The Session is planned as per following deta=
+ils:</font></div><div class=3D"gmail_default" dir=3D"ltr"><font face=3D"ver=
+dana,sans-serif"><br></font></div><div class=3D"gmail_default" dir=3D"ltr">=
+<b style=3D"line-height:19.99px;overflow:visible;font-style:normal;font-var=
+iant:normal;font-weight:700;font-size-adjust:none;font-stretch:100%"><font =
+style=3D"font:700 13.33px/19.99px verdana,sans-serif;overflow:visible;font-=
+size-adjust:none;font-stretch:100%">Date: Saturday, 12th January 2019</font=
+></b></div><div class=3D"gmail_default" style=3D"text-align:left;color:rgb(=
+34,34,34);text-transform:none;line-height:19.99px;text-indent:0px;letter-sp=
+acing:normal;overflow:visible;font-style:normal;font-variant:normal;font-we=
+ight:400;text-decoration:none;word-spacing:0px;white-space:normal;font-size=
+-adjust:none;font-stretch:100%;background-color:transparent" dir=3D"auto"><=
+b style=3D"line-height:19.99px;overflow:visible;font-style:normal;font-vari=
+ant:normal;font-weight:700;font-size-adjust:none;font-stretch:100%"><font s=
+tyle=3D"font:700 13.33px/19.99px verdana,sans-serif;overflow:visible;font-s=
+ize-adjust:none;font-stretch:100%">Time: 3:15 PM<br style=3D"line-height:19=
+.99px;overflow:visible;font-style:normal;font-variant:normal;font-weight:70=
+0;font-size-adjust:none;font-stretch:100%">Venue: AB-6/202</font></b></div>=
+<div class=3D"gmail_default" style=3D"text-align:left;color:rgb(34,34,34);t=
+ext-transform:none;line-height:19.99px;text-indent:0px;letter-spacing:norma=
+l;overflow:visible;font-style:normal;font-variant:normal;font-weight:400;te=
+xt-decoration:none;word-spacing:0px;white-space:normal;font-size-adjust:non=
+e;font-stretch:100%;background-color:transparent" dir=3D"auto"><b style=3D"=
+line-height:19.99px;overflow:visible;font-style:normal;font-variant:normal;=
+font-weight:700;font-size-adjust:none;font-stretch:100%"><font style=3D"fon=
+t:700 13.33px/19.99px verdana,sans-serif;overflow:visible;font-size-adjust:=
+none;font-stretch:100%"><br></font></b></div><div class=3D"gmail_default" s=
+tyle=3D"text-align:left;color:rgb(34,34,34);text-transform:none;line-height=
+:19.99px;text-indent:0px;letter-spacing:normal;overflow:visible;font-style:=
+normal;font-variant:normal;font-weight:400;text-decoration:none;word-spacin=
+g:0px;white-space:normal;font-size-adjust:none;font-stretch:100%;background=
+-color:transparent" dir=3D"ltr"><b style=3D"line-height:19.99px;overflow:vi=
+sible;font-style:normal;font-variant:normal;font-weight:700;font-size-adjus=
+t:none;font-stretch:100%"><font style=3D"font:700 13.33px/19.99px verdana,s=
+ans-serif;overflow:visible;font-size-adjust:none;font-stretch:100%">Speaker=
+ Bio:</font></b></div><div class=3D"gmail_default" style=3D"text-align:left=
+;color:rgb(34,34,34);text-transform:none;line-height:19.99px;text-indent:0p=
+x;letter-spacing:normal;overflow:visible;font-style:normal;font-variant:nor=
+mal;font-weight:400;text-decoration:none;word-spacing:0px;white-space:norma=
+l;font-size-adjust:none;font-stretch:100%;background-color:transparent" dir=
+=3D"ltr"><font style=3D"line-height:19.99px;overflow:visible;font-family:ve=
+rdana,sans-serif;font-size:13.33px;font-variant:normal;font-size-adjust:non=
+e;font-stretch:100%"><span style=3D"margin:0px"><font color=3D"#000000">Kam=
+alesh Dwivedi is a Business Partner at 3Lines Venture
+Capital, an active Angel investor, a mentor and business advisor to early s=
+tage
+startup companies in USA. He has been an Information Technology Executive w=
+ith
+over twenty years of successful track record as a CIO of several global cor=
+porations
+in their transformative phases in the US and Japan and has led workforce in
+more than fifteen countries.</font></span><br></font></div><div class=3D"gm=
+ail_default" style=3D"text-align:left;color:rgb(34,34,34);text-transform:no=
+ne;line-height:19.99px;text-indent:0px;letter-spacing:normal;overflow:visib=
+le;font-variant:normal;word-spacing:0px;white-space:normal;font-size-adjust=
+:none;font-stretch:100%;background-color:transparent" dir=3D"ltr"><font sty=
+le=3D"line-height:19.99px;overflow:visible;font-family:verdana,sans-serif;f=
+ont-size:13.33px;font-variant:normal;font-size-adjust:none;font-stretch:100=
+%">
+
+</font></div><font style=3D"line-height:19.99px;overflow:visible;font-famil=
+y:verdana,sans-serif;font-size:13.33px;font-variant:normal;font-size-adjust=
+:none;font-stretch:100%"><p class=3D"gmail_default" style=3D"margin:16px 0p=
+x" dir=3D"ltr"><span style=3D"margin:0px"><font color=3D"#000000">As a CIO,=
+ he has led IT organizations during periods of
+profound changes in the companies=E2=80=99 business models and their indust=
+ries.
+Whether it was the epochal move to broadband in the cable and telco industr=
+ies
+in 1990=E2=80=99s or the rapid globalization and a technology driven produc=
+tivity improvement
+in the US BPO industry during the 2000=E2=80=99s, Kamalesh has successfully=
+ led IT
+organizations through transformational vectors and change vortices. He has =
+also
+served as the CIO of Japan=E2=80=99s largest company in the BPO industry an=
+d has worked
+for the portfolio companies of the global Private Equity firms, Bain Capita=
+l
+and General Atlantic. As a Technology Consultant, he has consulted with a
+portfolio company of the Private Equity company Permira, in the Quick Servi=
+ce Restaurant
+industry in Japan. Most recently, Kamalesh consulted with Coca-Cola Bottler=
+s
+Japan Inc. Earlier in his career, he has led engineering and manufacturing
+organizations in the VLSI and Cell phone industries in Canada. Kamalesh has
+served on the Boards of TeleTech India, ADC Telecommunications India and
+Bell China in Dalian, China.=C2=A0</font></span></p><p class=3D"gmail_defau=
+lt" style=3D"margin:16px 0px" dir=3D"ltr"><span style=3D"margin:0px"><font =
+color=3D"#000000">Kamalesh holds a Bachelor of Technology degree from IIT
+Kanpur, a Master of Engineering from Carleton University, Ottawa, Canada an=
+d
+has completed the Program for Management Development (PMD) from Harvard Bus=
+iness
+School.</font></span></p></font><div class=3D"gmail_default" style=3D"text-=
+align:left;color:rgb(34,34,34);text-transform:none;line-height:19.99px;text=
+-indent:0px;letter-spacing:normal;overflow:visible;font-variant:normal;word=
+-spacing:0px;white-space:normal;font-size-adjust:none;font-stretch:100%;bac=
+kground-color:transparent" dir=3D"ltr"><font style=3D"line-height:19.99px;o=
+verflow:visible;font-family:verdana,sans-serif;font-size:13.33px;font-varia=
+nt:normal;font-size-adjust:none;font-stretch:100%">
+
+</font></div><div><font face=3D"verdana,sans-serif">Looking forward to see =
+you all,</font></div><div><font face=3D"verdana,sans-serif"><br></font></di=
+v><font face=3D"verdana,sans-serif">Best Regards,<br>Anand</font><div class=
+=3D"gmail_default" style=3D"margin:16px 0px"></div></div>
+
+--000000000000bf74f2057f30cc76--
